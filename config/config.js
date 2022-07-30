@@ -15,10 +15,19 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username: process.env.CLEAR_DB_USERNAME,
-    password: process.env.CLEAR_DB_PASSWORD,
-    database: process.env.CLEAR_DB_DATABASE,
-    host: process.env.CLEAR_DB_HOST,
+    username: "root",
+    password: null,
+    database: "database_test",
+    host: "127.0.0.1",
     dialect: "mysql",
   },
 };
+
+
+// production: {
+//   username: process.env.CLEAR_DB_USERNAME,
+//   password: process.env.CLEAR_DB_PASSWORD,
+//   database: process.env.CLEAR_DB_DATABASE,
+//   host: process.env.CLEAR_DB_HOST,
+//   dialect: "mysql",
+// },
