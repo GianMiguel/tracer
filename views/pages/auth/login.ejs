@@ -1,0 +1,71 @@
+<%- layout('layout/boilerplate') %>
+
+<div class="d-flex align-items-center justify-content-center login-page">
+  <div class="card login-page-card m-2">
+    <img
+      src="/images/tracer-dark.png"
+      class="card-img-top img-fluid login-page-logo"
+      alt="tracer logo"
+    />
+    <div class="card-body">
+      <h5 class="card-title text-center">Login to your account</h5>
+      <form
+        class="pt-2 needs-validation"
+        novalidate
+        action="/auth/login"
+        method="POST"
+        id="login-form"
+      >
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label"> Email address </label>
+          <input
+            type="email"
+            class="form-control"
+            id="loginEmail"
+            autoFocus
+            required
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label"> Password </label>
+          <input
+            type="password"
+            class="form-control"
+            id="loginPassword"
+            required
+            name="password"
+          />
+        </div>
+        <%- include("../../partials/flash") %>
+        <div class="d-grid mb-1">
+          <button type="submit" class="btn btn-theme-dark">Login</button>
+        </div>
+      </form>
+      <p class="card-text text-center">
+        No account yet? Click
+        <a href="/auth/signup" class="login-signup-link">here</a>
+        to sign up!
+      </p>
+
+      <div class="d-grid mt-3">
+        <h5 class="card-title text-center">Demo Accounts</h5>
+        <button id="demo-admin" class="btn btn-theme-dark mb-2">
+          Login as Admin
+        </button>
+        <button id="demo-pm" class="btn btn-theme-dark mb-2">
+          Login as Project Manager
+        </button>
+        <button id="demo-dev" class="btn btn-theme-dark mb-2">
+          Login as Developer
+        </button>
+        <button id="demo-submitter" class="btn btn-theme-dark mb-2">
+          Login as Submitter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/validateForms.js"></script>
+<script src="/js/demo.js"></script>
